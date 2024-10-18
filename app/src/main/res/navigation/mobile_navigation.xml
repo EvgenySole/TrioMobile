@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation2"
+            app:startDestination="@id/navigation_add_note">
+
+    <fragment
+            android:id="@+id/navigation_add_note"
+            android:name="com.example.testandro6.ui.add_note.AddNoteFragment"
+            android:label="@string/title_home"
+            tools:layout="@layout/fragment_add_note">
+        <action android:id="@+id/action_navigation_home_to_navigation_dashboard"
+                app:destination="@id/navigation_dashboard"
+                app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+        <action android:id="@+id/action_navigation_home_to_navigation_settings"
+                app:destination="@id/navigation_settings" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+        <action android:id="@+id/action_navigation_note_to_navigation_tasks"
+                app:destination="@id/navigation_logbooks" app:enterAnim="@anim/slide_in"
+                app:exitAnim="@anim/fade_out" app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/slide_out"/>
+        <action android:id="@+id/action_navigation_note_to_navigation_add_note_manual"
+                app:destination="@id/fragment_add_note_manual" app:enterAnim="@anim/slide_in"
+                app:exitAnim="@anim/fade_out" app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/slide_out"/>
+        <action android:id="@+id/action_navigation_add_note_to_navigation_add_note_camera"
+                app:destination="@id/fragment_add_note_camera" app:enterAnim="@anim/slide_in"
+                app:exitAnim="@anim/fade_out" app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/slide_out"/>
+
+    </fragment>
+
+    <fragment
+            android:id="@+id/navigation_logbooks"
+            android:name="com.example.testandro6.ui.logbooks.LogbooksFragment"
+            android:label="@string/title_tasks"
+            tools:layout="@layout/fragment_logbooks">
+        <action android:id="@+id/action_navigation_tasks_to_fragment_my_notes" app:destination="@id/fragment_my_notes"
+                app:enterAnim="@anim/slide_in"
+                app:exitAnim="@anim/fade_out" app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/slide_out"/>
+        <action android:id="@+id/action_navigation_tasks_to_fragment_my_objects"
+                app:destination="@id/fragment_my_objects" app:enterAnim="@anim/slide_in"
+                app:exitAnim="@anim/fade_out" app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/slide_out"/>
+        <action android:id="@+id/action_navigation_tasks_to_fragment_my_tasks" app:destination="@id/fragment_my_tasks"
+                app:enterAnim="@anim/slide_in"
+                app:exitAnim="@anim/fade_out" app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/slide_out"/>
+        <action android:id="@+id/action_navigation_tasks_to_fragment_my_messages"
+                app:destination="@id/fragment_my_messages" app:enterAnim="@anim/slide_in"
+                app:exitAnim="@anim/fade_out" app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment
+            android:id="@+id/navigation_dashboard"
+            android:name="com.example.testandro6.ui.dashboard.DashboardFragment"
+            android:label="@string/title_dashboard"
+            tools:layout="@layout/fragment_dashboard"/>
+    <fragment
+            android:id="@+id/navigation_settings"
+            android:name="com.example.testandro6.ui.settings.SettingsFragment"
+            android:label="@string/title_settings"
+            tools:layout="@layout/fragment_settings"/>
+    <fragment
+            android:id="@+id/fragment_add_note_manual"
+            android:name="com.example.testandro6.ui.add_note_manual.AddNoteManualFragment"
+            android:label="@string/title_add_note_manual"
+            tools:layout="@layout/fragment_add_note_manual">
+        <action android:id="@+id/action_add_note_manual_to_fragment_add_note_done"
+                app:destination="@id/fragment_add_note_done" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"
+        />
+    </fragment>
+    <fragment android:id="@+id/fragment_add_note_camera"
+              android:name="com.example.testandro6.ui.add_note_qr.AddNoteCameraFragment"
+              android:label="fragment_add_note_camera" tools:layout="@layout/fragment_add_note_camera">
+        <action android:id="@+id/action_add_note_camera_to_fragment_add_note_done"
+                app:destination="@id/fragment_add_note_done" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"
+        />
+    </fragment>
+    <fragment android:id="@+id/fragment_add_note_done"
+              android:name="com.example.testandro6.ui.add_note_done.AddNoteDoneFragment"
+              android:label="fragment_add_note_done" tools:layout="@layout/fragment_add_note_done">
+        <action android:id="@+id/action_add_note_done_fragment_to_fragment_add_note"
+                app:destination="@id/navigation_add_note" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
+    <fragment android:id="@+id/fragment_my_notes" android:name="com.example.testandro6.ui.my_notes.MyNotesFragment"
+              android:label="fragment_my_notes" tools:layout="@layout/fragment_my_notes">
+        <action android:id="@+id/action_fragment_my_notes_to_fragment_watch_note"
+                app:destination="@id/fragment_watch_note" app:enterAnim="@anim/slide_in"
+                app:exitAnim="@anim/fade_out" app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment android:id="@+id/fragment_watch_note" android:name="com.example.testandro6.ui.watch_note.WatchNoteFragment"
+              android:label="fragment_watch_note" tools:layout="@layout/fragment_watch_note">
+        <action android:id="@+id/action_fragment_watch_note_to_edit_note_fragment"
+                app:destination="@id/edit_note_fragment" app:enterAnim="@anim/slide_in" app:exitAnim="@anim/fade_out"
+                app:popEnterAnim="@anim/fade_in" app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment android:id="@+id/fragment_my_objects" android:name="com.example.testandro6.ui.my_objects.MyObjectsFragment"
+              android:label="fragment_my_objects" tools:layout="@layout/fragment_my_objects">
+        <action android:id="@+id/action_fragment_my_objects_to_fragment_watch_object"
+                app:destination="@id/fragment_watch_object" app:enterAnim="@anim/slide_in"
+                app:exitAnim="@anim/fade_out" app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/slide_out"/>
+        <action android:id="@+id/action_fragment_my_objects_to_fragment_add_object"
+                app:destination="@id/fragment_add_object" app:enterAnim="@anim/slide_in" app:exitAnim="@anim/fade_out"
+                app:popEnterAnim="@anim/fade_in" app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment android:id="@+id/fragment_watch_object"
+              android:name="com.example.testandro6.ui.watch_object.WatchObjectFragment"
+              android:label="fragment_watch_object" tools:layout="@layout/fragment_watch_object">
+        <action android:id="@+id/action_fragment_watch_object_to_edit_object_fragment"
+                app:destination="@id/edit_object_fragment" app:enterAnim="@anim/slide_in"
+                app:exitAnim="@anim/fade_out" app:popEnterAnim="@anim/fade_in" app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment android:id="@+id/fragment_my_tasks" android:name="com.example.testandro6.ui.my_tasks.MyTasksFragment"
+              android:label="fragment_my_tasks" tools:layout="@layout/fragment_my_tasks">
+        <action android:id="@+id/action_fragment_my_tasks_to_fragment_watch_task"
+                app:destination="@id/fragment_watch_task" app:enterAnim="@anim/slide_in"
+                app:exitAnim="@anim/fade_out" app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/slide_out"/>
+        <action android:id="@+id/action_fragment_my_tasks_to_fragment_add_task" app:destination="@id/fragment_add_task"
+                app:enterAnim="@anim/slide_in"
+                app:exitAnim="@anim/fade_out" app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment android:id="@+id/fragment_watch_message"
+              android:name="com.example.testandro6.ui.watch_message.WatchMessageFragment"
+              android:label="fragment_watch_message" tools:layout="@layout/fragment_watch_message"/>
+    <fragment android:id="@+id/fragment_my_messages"
+              android:name="com.example.testandro6.ui.my_messages.MyMessagesFragment"
+              android:label="fragment_my_messages" tools:layout="@layout/fragment_my_messages">
+        <action android:id="@+id/action_fragment_my_messages_to_fragment_watch_messages"
+                app:destination="@id/fragment_watch_message" app:enterAnim="@anim/slide_in"
+                app:exitAnim="@anim/fade_out" app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment android:id="@+id/fragment_watch_task" android:name="com.example.testandro6.ui.watch_task.WatchTaskFragment"
+              android:label="fragment_watch_task" tools:layout="@layout/fragment_watch_task">
+        <action android:id="@+id/action_fragment_watch_task_to_edit_task_fragment"
+                app:destination="@id/edit_task_fragment" app:enterAnim="@anim/slide_in" app:exitAnim="@anim/fade_out"
+                app:popEnterAnim="@anim/fade_in" app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment android:id="@+id/fragment_add_task" android:name="com.example.testandro6.ui.add_task.AddTaskFragment"
+              android:label="fragment_add_task" tools:layout="@layout/fragment_add_task">
+        <action android:id="@+id/action_fragment_add_task_to_fragment_add_task_done"
+                app:destination="@id/fragment_add_task_done" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"/>
+    </fragment>
+    <fragment android:id="@+id/fragment_add_task_done"
+              android:name="com.example.testandro6.ui.add_task_done.AddTaskDoneFragment"
+              android:label="fragment_add_task_done" tools:layout="@layout/fragment_add_task_done">
+        <action android:id="@+id/action_fragment_add_task_done_to_navigation_tasks"
+                app:destination="@id/navigation_logbooks" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
+    <fragment android:id="@+id/fragment_add_object" android:name="com.example.testandro6.ui.add_task.AddObjectFragment"
+              android:label="fragment_add_object" tools:layout="@layout/fragment_add_object">
+        <action android:id="@+id/action_fragment_add_object_to_fragment_add_object_done"
+                app:destination="@id/fragment_add_object_done" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"/>
+    </fragment>
+    <fragment android:id="@+id/fragment_add_object_done"
+              android:name="com.example.testandro6.ui.add_task_done.AddObjectDoneFragment"
+              android:label="fragment_add_object_done" tools:layout="@layout/fragment_add_object_done">
+        <action android:id="@+id/action_fragment_add_object_done_to_navigation_tasks"
+                app:destination="@id/navigation_logbooks" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
+    <fragment android:id="@+id/edit_note_fragment"
+              android:name="com.example.testandro6.ui.add_note_manual.EditNoteFragment"
+              android:label="edit_note_fragment" tools:layout="@layout/fragment_edit_note">
+        <action android:id="@+id/action_edit_note_fragment_to_fragment_add_note_done"
+                app:destination="@id/fragment_add_note_done" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"/>
+    </fragment>
+    <fragment android:id="@+id/edit_task_fragment" android:name="com.example.testandro6.ui.add_task.EditTaskFragment"
+              android:label="edit_task_fragment" tools:layout="@layout/fragment_edit_task">
+        <action android:id="@+id/action_edit_task_fragment_to_fragment_add_task_done"
+                app:destination="@id/fragment_add_task_done" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"/>
+    </fragment>
+    <fragment android:id="@+id/edit_object_fragment"
+              android:name="com.example.testandro6.ui.add_task.EditObjectFragment"
+              android:label="edit_object_fragment" tools:layout="@layout/fragment_edit_object">
+        <action android:id="@+id/action_edit_object_fragment_to_fragment_add_object_done"
+                app:destination="@id/fragment_add_object_done" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"/>
+    </fragment>
+
+</navigation>

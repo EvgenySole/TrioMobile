@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.watch_task.WatchTaskFragment" android:background="@drawable/backgroundtrio">
+
+    <TextView
+            android:id="@+id/textNumEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:text="Задача №"
+            android:textColor="#000000" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5dp"/>
+    <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp" android:id="@+id/button"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="10dp" app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#002C6EC1" app:strokeWidth="3dp"
+            android:backgroundTint="#007CB0F2" app:iconTint="#000000" android:textColor="#000000"
+            app:icon="?attr/actionModeCloseDrawable" app:iconPadding="2dp"
+            android:contentDescription="@string/action_sign_in" android:textAlignment="center"
+            app:rippleColor="#00FFFFFF" android:shadowColor="#00FFFFFF" android:outlineSpotShadowColor="#00FFFFFF"
+            android:outlineAmbientShadowColor="#00FFFFFF"
+    />
+    <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp" android:id="@+id/buttonEditTask"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="#007CB0F2" app:iconTint="#000000" app:iconPadding="2dp"
+            app:rippleColor="#00FFFFFF" app:icon="@android:drawable/ic_menu_preferences" app:strokeColor="#002C6EC1"
+            app:strokeWidth="3dp" android:contentDescription="@string/action_sign_in" android:textColor="#000000"
+            android:layout_marginRight="10dp" android:outlineAmbientShadowColor="#00FFFFFF"
+            android:outlineSpotShadowColor="#00FFFFFF"/>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="60dp" android:id="@+id/scrollView6" android:layout_marginTop="50dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar" android:paddingTop="10dp"
+                      android:id="@+id/lineLayNote" android:paddingBottom="50dp">
+            <TextView
+                    android:text="Описание задания"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/tvTaskNote" android:textSize="24sp"
+                    android:textColor="#000000" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"/>
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" app:cardCornerRadius="8dp" app:cardElevation="6dp">
+                <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:inputType="none"
+                        android:text="Без описания"
+                        android:ems="10"
+                        android:id="@+id/tvTaskNoteName"
+                        android:layout_gravity="top" android:gravity="top" android:textSize="24sp"
+                        android:textColor="#000000" android:maxWidth="10dp" android:maxLines="5"
+                        android:selectAllOnFocus="true" android:editable="false"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                    android:text="Объект обслуживания"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/tvMObject"
+                    android:textSize="24sp" android:textColor="#000000" android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"/>
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:text="Отсутствует"
+                    android:ems="10"
+                    android:id="@+id/tvMObjectName" android:minHeight="48dp" android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" android:textSize="24sp" android:textColor="#000000"
+                    android:editable="false" android:selectAllOnFocus="true"/>
+            <TextView
+                    android:text="Дата создания"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/tvDate"
+                    android:textSize="24sp" android:textColor="#000000" android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"/>
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:text="Дата"
+                    android:ems="10"
+                    android:id="@+id/tvDateName" android:minHeight="48dp" android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" android:textSize="24sp" android:textColor="#000000"
+                    android:editable="false" android:selectAllOnFocus="true"/>
+            <TextView
+                    android:text="Руководитель"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/tvHeadPerson" android:layout_marginLeft="20dp"
+                    android:layout_marginRight="0dp" android:textSize="24sp" android:textColor="#000000"/>
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:text="Руководитель"
+                    android:ems="10"
+                    android:id="@+id/tvHeadPersonName" android:minHeight="48dp" android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" android:textSize="24sp" android:textColor="#000000"
+                    android:editable="false"/>
+            <TextView
+                    android:text="Исполнитель"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/tvTargetWorker" android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" android:textSize="24sp" android:textColor="#000000"/>
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:text="Исполнитель"
+                    android:ems="10"
+                    android:id="@+id/tvTargetWorkerName" android:minHeight="48dp" android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" android:textSize="24sp" android:textColor="#000000"
+                    android:editable="false" android:selectAllOnFocus="true"/>
+            <TextView
+                    android:text="Выполнение"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/tvDone"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" android:textSize="24sp" android:textColor="#000000"/>
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:text="Нет"
+                    android:ems="10"
+                    android:id="@+id/tvDoneName" android:minHeight="48dp" android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" android:textSize="24sp" android:textColor="#000000"
+                    android:editable="false" android:selectAllOnFocus="true"/>
+            <Button
+                    android:text="Задача выполнена"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/buttonTaskDone"
+                    android:backgroundTint="#70BCFE" app:iconTint="#5C82E3" app:strokeColor="#2C6EC0"
+                    app:strokeWidth="3dp" android:textColor="#000000" android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"/>
+            <Button
+                    android:text="Закрыть задачу"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/buttonCloseTask"
+                    android:layout_margin="20dp"
+                    app:iconTint="#5C82E3" android:backgroundTint="#70BCFE" android:textColor="#000000"
+                    app:strokeColor="#2C6EC0" app:strokeWidth="3dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

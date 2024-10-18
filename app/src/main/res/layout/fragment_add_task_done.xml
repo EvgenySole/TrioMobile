@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.add_task_done.AddTaskDoneFragment">
+
+    <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:background="#00FFFFFF" android:id="@+id/scrollView2" android:paddingBottom="50dp"
+            android:contentDescription="@string/action_sign_in" android:layout_marginTop="100dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar" android:paddingTop="10dp"
+                      android:id="@+id/lineLayNote" android:paddingBottom="50dp">
+            <TextView
+                    android:id="@+id/textNumEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="34sp"
+                    android:text="Задача создана!"
+                    android:textColor="#000000" android:layout_marginTop="150dp" android:layout_gravity="center"/>
+            <Button
+                    android:text="На главный экран"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/buttonBack"
+                    app:iconTint="#5C82E3" android:backgroundTint="#70BCFE" android:textColor="#000000"
+                    app:strokeColor="#2C6EC0" app:strokeWidth="3dp" android:layout_marginTop="50dp"
+                    android:layout_marginLeft="20dp" android:layout_marginRight="20dp"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
